@@ -11,7 +11,7 @@ SQL >
     SELECT
         day,
         country,
-        sum(total_sales) as total_sales
+        sum(total_sales) AS total_sales
     FROM sales_by_hour
     WHERE day BETWEEN toStartOfDay(now()) - interval 1 day AND toStartOfDay(now())
         and country = {{ String(country, 'US')}}

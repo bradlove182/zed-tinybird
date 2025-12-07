@@ -8,4 +8,4 @@ repository = "https://github.com/bradlove182/zed-tinybird"
 
 [grammars.tinybird]
 repository = "file:///tmp/tree-sitter-tinybird"
-rev = "7fb7445689d19df0510aa9bb2a8c7f4f632e3571"
+rev = "7f7fb500df5e53405f37698a441e3e6df891bd2b"

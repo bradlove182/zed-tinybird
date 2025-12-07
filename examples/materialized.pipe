@@ -6,7 +6,7 @@ SQL >
     SELECT
         toStartOfDay(starting_date) day,
         country,
-        sum(sales) as total_sales
+        sum(sales) AS total_sales
     FROM teams
     GROUP BY day, country
 
