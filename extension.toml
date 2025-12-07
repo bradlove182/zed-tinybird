@@ -5,3 +5,7 @@ version = "0.1.0"
 schema_version = 1
 authors = ["Brad <[email protected]>"]
 repository = "https://github.com/bradlove182/zed-tinybird"
+
+[grammars.tinybird]
+repository = "file:///tmp/tree-sitter-tinybird"
+rev = "7fb7445689d19df0510aa9bb2a8c7f4f632e3571"
