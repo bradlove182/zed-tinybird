@@ -1,9 +1,5 @@
 # Tinybird Extension for Zed
 
-<p align="center">
-  <img src="https://raw.githubusercontent.com/tinybirdco/tinybird-vscode-plugin/main/images/icon.png" width="128" alt="Tinybird Logo">
-</p>
-
 This extension provides comprehensive syntax highlighting and language support for [Tinybird](https://www.tinybird.co/) files in the [Zed editor](https://zed.dev).
 
 ## Features
