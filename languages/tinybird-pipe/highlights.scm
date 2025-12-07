@@ -1,121 +1,22 @@
-; Comments
-(comment) @comment
+; Inherit SQL highlighting
+; (this extends the built-in SQL grammar highlights)
 
-; Keywords - Tinybird instructions
-[
-  "DESCRIPTION"
-  "TAGS"
-  "NODE"
-  "SQL"
-  "TYPE"
-  "DATASOURCE"
-  "TARGET_DATASOURCE"
-  "TOKEN"
-  "COPY_SCHEDULE"
-  "COPY_MODE"
-  "DEPLOYMENT_METHOD"
-] @keyword
+; Tinybird pipe-specific keywords as identifiers
+((identifier) @keyword
+  (#match? @keyword "^(DESCRIPTION|TAGS|NODE|SQL|TYPE|DATASOURCE|TARGET_DATASOURCE|TOKEN|COPY_SCHEDULE|COPY_MODE|DEPLOYMENT_METHOD)$"))
 
 ; Pipe types
-[
-  "ENDPOINT"
-  "MATERIALIZED"
-  "COPY"
-  "SINK"
-] @type.builtin
+((identifier) @type.builtin
+  (#match? @type.builtin "^(ENDPOINT|MATERIALIZED|COPY|SINK)$"))
 
-; SQL Keywords
-[
-  "SELECT"
-  "FROM"
-  "WHERE"
-  "GROUP BY"
-  "ORDER BY"
-  "LIMIT"
-  "OFFSET"
-  "JOIN"
-  "LEFT JOIN"
-  "RIGHT JOIN"
-  "INNER JOIN"
-  "ON"
-  "AND"
-  "OR"
-  "NOT"
-  "IN"
-  "AS"
-  "BETWEEN"
-  "LIKE"
-  "IS"
-  "NULL"
-  "DISTINCT"
-  "HAVING"
-  "UNION"
-  "ALTER"
-  "TABLE"
-  "MODIFY"
-  "QUERY"
-] @keyword
+; Permissions and modes
+((identifier) @constant.builtin
+  (#match? @constant.builtin "^(READ|APPEND|append|replace|alter)$"))
 
-; Permissions
-[
-  "READ"
-  "APPEND"
-] @constant.builtin
+; Template functions (Tinybird templating syntax: {{ String(...) }})
+((identifier) @function.special
+  (#match? @function.special "^(String|Int32|Int64|Float32|Float64|Date|DateTime|UInt32|UInt64)$"))
 
-; Copy modes
-[
-  "append"
-  "replace"
-] @constant.builtin
-
-; Deployment methods
-[
-  "alter"
-] @constant.builtin
-
-; Strings
-(string) @string
-
-; Numbers
-(number) @number
-
-; Functions
-(function_call name: (identifier) @function)
-
-; Template parameters (special Tinybird syntax)
-; e.g., {{ String(country, 'US') }}
-(identifier) @function.special
-  (#match? @function.special "^(String|Int32|Int64|Float32|Float64|Date|DateTime)$")
-
-; Identifiers
-(identifier) @variable
-
-; Operators
-[
-  "="
-  ">"
-  "<"
-  ">="
-  "<="
-  "!="
-  "+"
-  "-"
-  "*"
-  "/"
-  "%"
-] @operator
-
-; Punctuation
-[
-  "("
-  ")"
-  ","
-  ";"
-] @punctuation.delimiter
-
-[
-  "{"
-  "}"
-  "["
-  "]"
-] @punctuation.bracket
+; ClickHouse/SQL functions specific to Tinybird
+((identifier) @function.builtin
+  (#match? @function.builtin "^(toYYYYMM|toStartOfDay|toStartOfHour|toIntervalDay|toIntervalHour|now|LowCardinality|sum|count|avg|min|max)$"))
