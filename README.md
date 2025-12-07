@@ -21,10 +21,7 @@ This extension provides comprehensive syntax highlighting and language support f
 1. Open Zed.
 2. Open the Command Palette (`cmd-shift-p`) and type `extensions`.
 3. Select `Zed: Extensions`.
-4. Click solely on "Install Extension from SCM" if available, or clone this repository into your extensions folder:
-   ```bash
-   git clone https://github.com/bradlove182/zed-tinybird.git ~/Library/Application\ Support/Zed/extensions/installed/tinybird
-   ```
+4. Click on "Install Dev Extension".
 
 *(Note: Once available in the official Zed Extension Registry, you will be able to search for "Tinybird" directly.)*
 
