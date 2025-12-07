@@ -7,5 +7,5 @@ authors = ["Brad <[email protected]>"]
 repository = "https://github.com/bradlove182/zed-tinybird"
 
 [grammars.tinybird]
-repository = "https://github.com/bradlove182/zed-tinybird"
+repository = "https://github.com/bradlove182/tree-sitter-tinybird"
 rev = "main"
