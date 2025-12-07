@@ -1,9 +1,9 @@
 id = "tinybird"
 name = "Tinybird"
-description = "Syntax highlighting for Tinybird .datasource and .pipe files"
-version = "0.1.0"
+description = "Syntax highlighting for Tinybird files"
+version = "0.0.1"
 schema_version = 1
-authors = ["Brad <[email protected]>"]
+authors = ["Brad Love <brad@bradlove.co.za>"]
 repository = "https://github.com/bradlove182/zed-tinybird"
 
 [grammars.tinybird]
